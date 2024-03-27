@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul class="nav">
+    <li>我的首页</li>
+    <li>产品介绍</li>
+    <li>联系方式</li>
+  </ul>
+
+  <script>
+    const ul = document.querySelector('.nav')
+    const nodelist = document.querySelectorAll('.nav li')
+    // for (let i = 0; i < nodelist.length; i++) {
+    //   const element = nodelist[i];
+    
+    // }
+   const ele= nodelist[0];
+   ele.innerHTML='我是第一个li'
+   ele.innerText='我是innerText'
+  </script>
+</body>
+
+</html>

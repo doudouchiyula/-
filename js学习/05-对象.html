@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = [{ pic: '../学成在线/images/pic1.png', title: '反正也没事可做就学习呗', price: '15.5元' }, { pic: '../学成在线/images/pic1.png', title: 'htrdhtrsh s', price: '76.5元' }, { pic: '../学成在线/images/pic1.png', title: '一直在学习基础，从未', price: '2.5元' }]
+
+    let obj2 = {
+      unname: '张远',
+      //方法
+      song: function () {
+        console.log('冰雨');
+      },
+      dance: function (x, y) {
+        console.log(x + y);
+      }
+    }
+    //方法调用
+    obj2.song()
+    obj2.dance(3, 4)
+
+    //遍历对象,key是
+    for (let key in obj2) {
+      console.log(obj2[key]);
+    }
+
+  </script>
+</body>
+
+</html>

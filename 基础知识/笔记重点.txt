@@ -1,0 +1,36 @@
+一、浮动元素：
+1、浮动元素会脱离标准流（脱标），浮动盒子不再保留原先的位置；
+2、浮动元素会一行内显示并且元素顶部对齐；
+3、浮动元素具有行内块元素；
+二、清除浮动(父级没有高度、子盒子浮动、影响下面的布局)
+1、额外标签法（新增的盒子要求必须是块级元素），w3c推荐，clear:both,缺点：会有很多无意义的标签，开发不推荐
+2、父元素添加overflow,将其设置成hidden、auto、scroll 缺点：无法显示溢出的部分
+3、:after伪元素 ,设置给父元素
+.clearfix:after{
+   display:block;
+   clear:both;
+   height:0;
+   content:"";
+   visibility:hidden; 
+}
+.clearfix{
+    //IE6、7专用
+    *zoom:1;
+}
+4、双伪元素清除浮动
+.clearfix:before,.clearfix:after{
+   display:table;
+   content:"";
+}
+.clearfix:after{
+   clear:both;
+}
+.clearfix{
+    //IE6、7专用
+    *zoom: 1;
+}
+
+三、
+实际开发中，我们不会直接用链接a而是用li包含a的做法
+四、
+定位=定位模式+边偏移

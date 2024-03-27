@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .search {
+      width: 300px;
+      height: 30px;
+      background: none;
+      outline: none;
+      border: 1px solid #ccc;
+    }
+
+    .focus {
+      border: 1px solid saddlebrown;
+    }
+
+    .all-products {
+      width: 300px;
+      list-style: none;
+      border: 1px solid saddlebrown;
+      display: none;
+    }
+
+    .all-products li {
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="search" class="search" placeholder="小米生态">
+  <div class="all-products">
+    <ul>
+      <li>全部商品</li>
+      <li>小米手机</li>
+      <li>小米电视机</li>
+      <li>小米洗衣机</li>
+      <li>小米冰箱</li>
+      <li>小米监控</li>
+      <li>小米空调</li>
+      <li>小米拖拉机</li>
+    </ul>
+  </div>
+  <script>
+    const search = document.querySelector('.search')
+    const products = document.querySelector('.all-products')
+
+    search.addEventListener('focus', function () {
+      products.style.display = 'block'
+      // search.style.border = '1px solid saddlebrown'
+      search.classList.add('focus')
+    })
+
+    search.addEventListener('blur', function () {
+      products.style.display = 'none'
+      // search.style.border = '1px solid #ccc'
+      search.classList.remove('focus')
+    })
+
+  </script>
+</body>
+
+</html>

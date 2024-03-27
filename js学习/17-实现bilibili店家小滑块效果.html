@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      width: 1000px;
+      height: 80px;
+      border-bottom: 1px solid #ccc;
+      ;
+      overflow: hidden;
+      line-height: 80px;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      padding: 0 25px;
+      font-size: 20px;
+
+    }
+
+    .line {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 25px;
+      background-color: red;
+      transition: all 0.3s;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul>
+      <li>首页</li>
+      <li>动画</li>
+      <li>原创</li>
+      <li>喜剧</li>
+      <li>音乐</li>
+      <li>舞蹈</li>
+      <li>舞蹈2</li>
+      <li>舞蹈3</li>
+    </ul>
+    <div class="line"></div>
+  </header>
+  <script>
+    const ul = document.querySelector('ul')
+    const line = document.querySelector('.line')
+    ul.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        const offSetLeft = e.target.offsetLeft
+        console.log(offSetLeft);
+        line.style.transform = `translateX(${offSetLeft}px)`
+      }
+    })
+  </script>
+</body>
+
+</html>

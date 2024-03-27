@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      margin: 0 auto;
+      width: 300px;
+      height: 350px;
+      background-color: rgb(178, 73, 73);
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .title1 {
+      font-size: 24px;
+    }
+
+    .title2 {
+      font-size: 30px;
+    }
+
+    .time {
+      font-size: 28px;
+    }
+
+    .title4 {
+      font-size: 28px;
+    }
+
+    span {
+      display: inline-block;
+      background-color: rgb(50, 49, 49);
+      padding: 2px;
+    }
+
+    i {
+      font-style: normal;
+      font-size: 28px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <p class="title1">今天是</p>
+    <p class="title2">下班倒计时</p>
+    <div class="time">
+      <span class="hour">23</span><i>:</i><span class="miniute">30</span><i>:</i><span class="second">27</span>
+    </div>
+    <p class="title4">19:30:00下课</p>
+  </div>
+  <script>
+    const hour = document.querySelector('.hour')
+    const miniute = document.querySelector('.miniute')
+    const second = document.querySelector('.second')
+    document.querySelector('.title1').innerHTML = getMDate()
+    getCount()
+    setInterval(() => {
+      getCount()
+    }, 1000);
+
+
+    function getMDate() { 
+      const date = new Date()
+      return `今天是${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+    }
+
+    function getCount() {
+      const date = +new Date()
+      const end = +new Date('2024-3-26 19:30:00')
+      const timediff = (end - date) / 1000
+      console.log(timediff);
+      let h = parseInt(timediff / 60 / 60 % 24)
+      let m = parseInt(timediff / 60 % 60)
+      let s = parseInt(timediff % 60)
+      h = h > 10 ? h : '0' + h
+      m = m > 10 ? m : '0' + m
+      s = s > 10 ? s : '0' + s
+      hour.innerHTML = h
+      miniute.innerHTML = m
+      second.innerHTML = s
+    }
+  </script>
+</body>
+
+</html>

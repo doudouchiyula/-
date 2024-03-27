@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(1000px, 0);
+      }
+
+      50% {
+        transform: translate(1000px, 800px);
+      }
+
+      75% {
+        transform: translate(0, 800px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      animation: move 7s;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    我要四个角转
+  </div>
+</body>
+
+</html>

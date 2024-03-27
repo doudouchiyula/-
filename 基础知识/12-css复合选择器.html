@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*后代选择器- 用空格隔开，ol是父 li是子，孙子，只要是后代就行 */
+        ol li {
+            color: blue;
+        }
+
+        ol li a {
+            color: red;
+        }
+
+        .nax li {
+            color: brown;
+        }
+
+        /* 子选择器-作为某元素直接/一级子元素的元素。 */
+        .nav>p {
+            color: aquamarine;
+        }
+
+        /* 并集选择器,逗号 */
+        .bingji div,
+        p,
+        .pig li {
+            color: pink;
+        }
+
+        /* 伪类选择器 ，用冒号表示 比如:hover :first-child*/
+        .lianjie:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .lianjie:visited {
+            color: red;
+        }
+
+        .lianjie:hover {
+            color: burlywood;
+        }
+
+        .lianjie:active {
+            color: blueviolet;
+        }
+
+        /* :focus伪类选择器 */
+        input:focus {
+            color: red;
+            background-color: aqua;
+        }
+
+        .a1 {
+            display: block;
+            background-color: rebeccapurple;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是哦了的还<a href="#">我是孙子</a></li>
+        <li>我是哦了的还</li>
+        <li>我是哦了的还</li>
+        <li>我是哦了的还</li>
+    </ol>
+
+    <ul>
+        <li>金佛大海</li>
+        <li>金佛大海</li>
+        <li>金佛大海</li>
+    </ul>
+
+    <ul class="nax">
+        <li>fojaidjoajf</li>
+        <li>fojaidjoajf</li>
+        <li>fojaidjoajf</li>
+        <li>fojaidjoajf</li>
+        <li>fojaidjoajf</li>
+    </ul>
+    <div class="nav">
+        <p>我是儿子</p>
+        <p>
+        <div>我是孙子</div>
+        </p>
+    </div>
+    <div class="bingji">
+        <div>熊大</div>
+        <p>熊二</p>
+        <span>光头强</span>
+        <ul class="pig">
+            <li>小猪1</li>
+            <li>小猪2</li>
+            <li>小猪3</li>
+        </ul>
+    </div>
+
+    <a href="#" class="lianjie">雄安猪佩奇</a>
+    <br>
+    <input type="text">
+    <input type="text">
+    <input type="text"><br>
+    <a href="#" class="a1">行业元素转化成块级元素</a>
+</body>
+
+</html>

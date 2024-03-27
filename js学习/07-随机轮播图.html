@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .box {
+      width: 800px;
+    }
+
+    img {
+      width: 800px;
+      height: 600px;
+      /* 兼容低版本浏览器，如果图片外面包含了链接会有边框问题 */
+      border: 0;
+      /* 取消图片底侧有空隙的问题 */
+      vertical-align: middle
+    }
+
+    .bottom {
+      height: 100px;
+      background-color: aquamarine;
+      /* padding: 15px; */
+      box-sizing: border-box;
+    }
+
+    .title {
+      padding: 10px;
+    }
+
+    .selector li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      background-color: #ccc;
+      list-style: none;
+      border-radius: 15px;
+    }
+
+    .selector .selected {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <img alt="">
+    <div class="bottom">
+      <h3 class="title">我是白哦提</h3>
+      <ul class="selector">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    let datas = [{
+      url: './images/img1.jpg',
+      titlt: '这是第一张图片',
+      rgb: 'rgb(0,255,23)'
+    }, {
+      url: './images/img2.jpg',
+      titlt: '这是第2张图片',
+      rgb: 'rgb(122,42,8)'
+    }, {
+      url: './images/img3.jpg',
+      titlt: '这是第3张图片',
+      rgb: 'rgb(200,78,23)'
+    }, {
+      url: './images/img4.jpg',
+      titlt: '这是第4张图片',
+      rgb: 'rgb(29,255,46)'
+    }, {
+      url: './images/img5.jpg',
+      titlt: '这是第5张图片',
+      rgb: 'rgb(78,100,100)'
+    }, {
+      url: './images/img6.jpg',
+      titlt: '这是第6张图片',
+      rgb: 'rgb(82,87,0)'
+    }, {
+      url: './images/img7.jpg',
+      titlt: '这是第7张图片',
+      rgb: 'rgb(36,86,41)'
+    },
+    ]
+    const img = document.querySelector('img')
+    const bottom = document.querySelector('.bottom')
+    const title = document.querySelector('.title')
+    img.src = datas[0].url
+    bottom.style.backgroundColor = datas[0].rgb
+    title.innerHTML = datas[0].titlt
+
+    let lastIndex = 1
+    let index = 0
+    setInterval(() => {
+      index++
+      if (index === datas.length) {
+        index = 0
+      }
+      img.src = datas[index].url
+      bottom.style.backgroundColor = datas[index].rgb
+      title.innerHTML = datas[index].titlt
+      const lastli = document.querySelector(`.selector li:nth-child(${lastIndex})`)
+      lastli.classList.remove('selected')
+      const li = document.querySelector(`.selector li:nth-child(${index + 1})`)
+      li.className = 'selected'
+      lastIndex = index + 1
+    }, 1000);
+
+  </script>
+</body>
+
+</html>

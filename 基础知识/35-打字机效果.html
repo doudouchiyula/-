@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打字机</title>
+  <style>
+    @keyframes dazi {
+      0% {
+        width: 0px;
+      }
+
+      100% {
+        width: 200px;
+      }
+    }
+
+    div {
+      overflow: hidden;
+      width: 200px;
+      height: 30px;
+      background-color: pink;
+      font-size: 20px;
+      /* 让文字强制在一行 */
+      white-space: nowrap;
+      animation: dazi 5s steps(10) forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div>世纪佳缘相约龙元年呀</div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      color: blue;
+      background-color: aquamarine;
+    }
+
+    .active {
+      background-color: pink;
+      color: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    classlist用法
+  </div>
+  <script>
+   const box= document.querySelector('.box')
+  //  box.classList.add('active')
+  //  box.classList.remove('active')
+   box.classList.toggle('active')
+  </script>
+</body>
+
+</html>

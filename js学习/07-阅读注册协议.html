@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea name="" id="" cols="30" rows="10">
+    <h3>用户注册协议</h3>
+    <p>娱乐圈内美女如云，凭借着自身优异的外貌条件以及出色的演技，在观众心目中留下深刻印象。
+    
+    然而时光荏苒，美人迟暮，再美的美人也逃不过岁月的无情，“中年发福”让她们整个人面目全非。
+    
+    以下几位明星人到中年身材臃肿，绝美容颜不再。</p>
+  </textarea>
+  <button>我已阅读用户协议<span>(5)</span></button>
+  <script>
+    const span = document.querySelector('span')
+    const button = document.querySelector('button')
+    let i = 5
+    button.disabled = true
+    let n = setInterval(function () {
+      i--
+      span.innerHTML = `(${i})`
+      if (i === 0) {
+        clearInterval(n)
+        span.style.display = 'none'
+        button.disabled = false
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

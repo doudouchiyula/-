@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 800px;
+      border-collapse: collapse;
+    }
+
+    thead {
+      height: 50px;
+      background-color: rgb(108, 108, 239);
+      color: white;
+      font-size: 20px;
+    }
+
+    td {
+      border: 1px solid #ccc;
+    }
+
+    tbody tr {
+      height: 50px;
+      font-size: 22px;
+      color: #686767;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox" class="all">全选</th>
+        <th>商品</th>
+        <th>商家</th>
+        <th>价格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" class="ck"></td>
+        <td>小米手机</td>
+        <td>小米</td>
+        <td>￥1999</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="ck"></td>
+        <td>小米净水器</td>
+        <td>小米</td>
+        <td>￥4999</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="ck"></td>
+        <td>小米电视</td>
+        <td>小米</td>
+        <td>￥19999</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    const all = document.querySelector('.all')
+    const cks = document.querySelectorAll('.ck')
+    all.addEventListener('click', function () {
+      console.log(this.checked);
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].checked = this.checked;
+      }
+    })
+    // 补充知识点，.ck:checked 伪类选出被勾选的所有ck
+    for (let i = 0; i < cks.length; i++) {
+      cks[i].addEventListener('click', function () {
+        const checkedcks = document.querySelectorAll('.ck:checked')
+        all.checked = checkedcks.length === cks.length
+      })
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .slider {
+      position: relative;
+    }
+
+    .slider-wrapper {
+      width: 800px;
+      height: 600px;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider-footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 800px;
+      height: 100px;
+    }
+
+    .slider-footer p {
+      font-size: 24px;
+      margin-left: 10px;
+    }
+
+    .slider-footer ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .slider-footer ul li {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    .slider-footer ul .ative {
+      background-color: red;
+      width: 15px;
+      height: 15px;
+      border-radius: 8px;
+    }
+
+    .toggle {
+      position: absolute;
+      right: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .pre {
+      width: 30px;
+      height: 30px;
+    }
+
+    .next {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="./images/img1.jpg" alt="">
+    </div>
+    <div class="slider-footer">
+      <p>对于人来说是不会四航局佛IE我</p>
+      <ul>
+        <li class="ative"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="pre">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const datas = [{ url: './images/img1.jpg', title: '1对于人类涞水是不是太超前了', color: 'rgb(100,67,68)' },
+    { url: './images/img2.jpg', title: '2fdgs fgfs太超前了', color: 'rgb(43,25,26)' },
+    { url: './images/img3.jpg', title: '3gfshgukol是不是太超前了', color: 'rgb(36,31,33)' },
+    { url: './images/img4.jpg', title: '4对于人kjlkh水是不是太超前了', color: 'rgb(139,,96,53)' },
+    { url: './images/img5.jpg', title: '5对于人类涞水是kjygkf太超前了', color: 'rgb(53,67,68)' },
+    { url: './images/img6.jpg', title: '6对于人类涞jftj是太超前了', color: 'rgb(100,0,68)' },
+    { url: './images/img7.jpg', title: '7对于挤公交二极管是太超前了', color: 'rgb(0,67,0)' }
+    ]
+
+    const img = document.querySelector('.slider-wrapper img')
+    const p = document.querySelector('.slider-footer p')
+    const footer = document.querySelector('.slider-footer')
+    const pre = document.querySelector('.pre')
+    const next = document.querySelector('.next')
+    const slider = document.querySelector('.slider')
+    let i = 0
+    pre.addEventListener('click', function () {
+      // 播放上一张
+      i--
+      i = i < 0 ? datas.length - 1 : i
+      render()
+    })
+
+    next.addEventListener('click', function () {
+      i++
+      i = i >= datas.length ? 0 : i
+      render()
+    })
+    let timerId = setInterval(() => {
+      next.click()
+    }, 1000);
+
+    slider.addEventListener('mouseenter', function () {
+      clearInterval(timerId)
+    })
+    slider.addEventListener('mouseleave', function () {
+      clearInterval(timerId)
+      timerId = setInterval(() => {
+        next.click()
+      }, 1000);
+    })
+    
+    function render() {
+      img.src = datas[i].url
+      p.innerHTML = datas[i].title
+      footer.style.backgroundColor = datas[i].color
+      document.querySelector('.slider-footer .ative').classList.remove('ative')
+      document.querySelector(`.slider-footer li:nth-child(${i + 1})`).classList.add('ative')
+    }
+  </script>
+
+</body>
+
+</html>

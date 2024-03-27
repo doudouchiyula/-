@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: relative;
+      width: 600px;
+      height: 300px;
+      border: 2px solid #ccc;
+      margin: 0 auto;
+    }
+
+    h4 {
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 400;
+      margin-top: 60px;
+    }
+
+    .toggle {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      margin-top: 80px;
+    }
+
+    .start,
+    .end {
+      width: 80px;
+      height: 40px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h4>随即问答</h4>
+    <p>问题是：<span class="question">什么是随机函数</span></p>
+    <div class="toggle">
+      <button class="start">开始</button>
+      <button class="end">结束</button>
+    </div>
+  </div>
+
+  <script>
+    let timerId = 0
+    let random = 0
+    let datas = [{ value: '什么是回调函数' },
+    { value: 'hfdoahoiehwq' },
+    { value: '风大哥我如果' },
+    { value: 'v给他热火吧' },
+    { value: '她很温柔' },
+    { value: 'u给予宽容他人的' },
+    { value: '委屈' },
+    { value: 'i科尔v' }]
+    const question = document.querySelector('.question')
+    const start = document.querySelector('.start')
+    const end = document.querySelector('.end')
+
+
+
+    start.addEventListener('click', function () {
+      timerId = setInterval(() => {
+        // 随机数
+        random = Math.floor(Math.random() * datas.length)
+        question.innerHTML = datas[random].value
+      }, 100);
+      if (datas.length === 1) {
+        // start.disabled = true
+        // end.disabled = true
+        // 也可以写为
+        start.disabled = end.disabled = true
+      }
+    })
+    end.addEventListener('click', function () {
+      clearInterval(timerId)
+
+      datas.splice(random, 1)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h3 {
+      text-align: center;
+    }
+
+    table {
+      width: 500px;
+      border-collapse: collapse;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    table,
+    tr,
+    td {
+      padding: 10px;
+      border: 1px #999 solid;
+    }
+
+    table tr:first-child {
+      background-color: #ccc;
+    }
+
+    table tr:not(:first-child):hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>学生列表</h3>
+  <table>
+    <tr>
+      <td>序号</td>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+      <td>家乡</td>
+    </tr>
+
+    <script>
+      let students = [{ snaame: '小明', age: '18', gender: '男', address: '河北省' }, { snaame: '小红', age: '19', gender: '女', address: '河南省' }, { snaame: '小刚', age: '17', gender: '男', address: '山西省' }, {
+        snaame: '小丽', age: '18', gender: '女', address: '山东省'
+      }]
+
+      for (let index = 0; index < students.length; index++) {
+        const element = students[index];
+        document.write(`<tr>
+          <td>${index + 1}</td>
+          <td>${element.snaame}</td>
+          <td>${element.age}</td>
+          <td>${element.gender}</td>
+          <td>${element.address}</td>
+        </tr>`)
+      }
+    </script>
+  </table>
+
+</body>
+
+</html>

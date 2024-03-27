@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: relative;
+      width: 600px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    我是广告
+    <button>
+      x
+    </button>
+  </div>
+  <script>
+    const button = document.querySelector('button')
+    const div = document.querySelector('div')
+    button.addEventListener('click', function () {
+      div.style.visibility = 'hidden'
+    })
+  </script>
+</body>
+
+</html>

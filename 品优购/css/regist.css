@@ -1,0 +1,144 @@
+.header {
+  position: relative;
+  height: 84px;
+  border-bottom: 2px solid #b1191a;
+}
+
+.logo {
+  height: 120px;
+  margin-top: 16px;
+}
+
+.body {
+  position: relative;
+  height: 520px;
+  border: solid 1px #dfdfdf;
+  margin-top: 21px;
+}
+
+.title {
+  height: 41px;
+  background-color: #ececec;
+  line-height: 41px;
+}
+
+.title .left {
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+  color: #333333;
+}
+
+.title .right {
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.title .right a {
+  font-weight: 700;
+  color: #c81623;
+}
+
+.info {
+  width: 600px;
+  margin: 50px auto 0;
+  color: #4d4d4d;
+  font-size: 14px;
+}
+
+.info ul label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+.info .inp {
+  border: solid 1px #999999;
+  width: 240px;
+  height: 36px;
+  margin-top: 20px;
+}
+
+.error {
+  font-size: 12px;
+  color: #df3033;
+}
+
+.error .error_icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url(../images/error.png) no-repeat center;
+}
+
+.safe {
+  margin-left: 165px;
+  margin-top: 10px;
+}
+
+.safe_title {
+  font-size: 12px;
+  color: #b3b3b3;
+  height: 13px;
+  line-height: 13px;
+}
+
+.weak,
+.mid,
+.stro {
+  display: inline-block;
+  width: 34px;
+  height: 13px;
+  background-color: #de1111;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: center;
+  color: white;
+  margin-left: 9px;
+}
+
+.mid {
+  background-color: #40b83f;
+  margin-left: 1px;
+}
+
+.stro {
+  background-color: #f79100;
+  margin-left: 1px;
+}
+
+
+.protocol {
+  margin-left: 100px;
+  font-size: 12px;
+  color: #4d4d4d;
+  margin-top: 25px;
+}
+
+.protocol input {
+  width: 16px;
+  height: 15px;
+  background-color: #f2f2f2;
+  border: solid 1px #999999;
+  vertical-align: middle;
+}
+
+.protocol span{
+  color: #1ba1e6;
+  line-height: 15px;
+}
+
+.btn {
+  width: 200px;
+  height: 34px;
+  background-color: #c81623;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  margin: 30px 0 0 70px;
+  margin-top: 64px;
+  border: 0;
+}

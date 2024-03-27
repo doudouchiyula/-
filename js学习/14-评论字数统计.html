@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+      width: 800px;
+      box-sizing: border-box;
+    }
+
+    .input-area {
+      position: relative;
+      width: 700px;
+    }
+
+    .textarea {
+      width: 100%;
+      height: 80px;
+      max-width: 100%;
+      border: 1px #ccc solid;
+      outline: none;
+      color: #333;
+      font-size: 24px;
+      transition: all 0.3s;
+      /* 文本区域是否可以被鼠标拉伸 */
+      resize: none;
+    }
+
+    /* 获得光标 */
+    .textarea:focus {
+      border: 1px solid red;
+      height: 120px;
+    }
+
+    .publish {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background-color: rgb(71, 71, 216);
+      border-radius: 10px;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      margin-left: 10px;
+    }
+
+    .words {
+      position: absolute;
+      opacity: 0;
+      right: 0;
+      color: #666;
+      font-size: 24px;
+      transition: all 0.5s;
+    }
+
+    .comment {
+      border-bottom: 1px dashed #ccc;
+      padding: 20px 0;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="input-area">
+      <textarea type="text" maxlength="200" class="textarea" placeholder="发一条友善的评论"></textarea>
+      <span class="words">0/200字</span>
+    </div>
+    <button class="publish">发布</button>
+  </div>
+  <div class="comment">
+    <p>清风徐来</p>
+    <p class="content">范德萨发</p>
+    <p>2020-10-52</p>
+  </div>
+  <script>
+    const textarea = document.querySelector('.textarea')
+    const words = document.querySelector('.words')
+    const comment = document.querySelector('.comment')
+    const content = document.querySelector('.content')
+    textarea.addEventListener('input', function () {
+      words.innerHTML = `${textarea.value.length}/200字`
+    })
+    textarea.addEventListener('focus', function () {
+      words.style.opacity = 1
+    })
+    textarea.addEventListener('blur', function () {
+      words.style.opacity = 0
+    })
+
+    textarea.addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') {
+        // if (textarea.value.trim() !== '') {
+        //等价于if('') 是假的
+        if (textarea.value.trim()) {
+          content.innerHTML = `${textarea.value.trim()}`
+          comment.style.display = 'block'
+        }
+        textarea.value = ''
+        words.innerHTML = '0/200字'
+      }
+    })
+
+  </script>
+</body>
+
+</html>

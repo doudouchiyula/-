@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes ring_flash {
+      0% {}
+
+      /* 不要用scale 因为它会让阴影变大 */
+      70% {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 70px;
+        height: 70px;
+        opacity: 0.5;
+      }
+    }
+
+    .map {
+      position: relative;
+      width: 2183px;
+      height: 2663px;
+      background: url(china.jpg) no-repeat;
+
+    }
+
+    .city {
+      position: absolute;
+      top: 775px;
+      left: 1515px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: blue;
+    }
+
+    .city div[class^="ring"] {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      box-shadow: 0 0 12px #3a88e0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: ring_flash 1.5s linear;
+      animation-iteration-count: infinite;
+    }
+
+    .city div.ring2 {
+      animation-delay: 0.4s;
+    }
+
+    .city div.ring3 {
+      animation-delay: 0.8s;
+    }
+
+    .tb {
+      top: 941px;
+      left: 1027px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="map">
+    <div class="city">
+      <div class="dot"></div>
+      <div class="ring1"></div>
+      <div class="ring2"></div>
+      <div class="ring3"></div>
+    </div>
+
+    <div class="city tb">
+      <div class="dot"></div>
+      <div class="ring1"></div>
+      <div class="ring2"></div>
+      <div class="ring3"></div>
+    </div>
+  </div>
+</body>
+
+</html>

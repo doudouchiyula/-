@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let nem = Math.floor(Math.random() * 10) + 1
+    console.log(nem);
+    let inp = +prompt("请输入一个数字：")
+    if (nem < inp) {
+      alert('数字猜大了，继续猜')
+    } else if (nem === inp) {
+      alert('猜对了， 程序结束')
+    } else {
+      alert('数字猜小了，继续猜')
+    }
+  </script>
+</body>
+
+</html>

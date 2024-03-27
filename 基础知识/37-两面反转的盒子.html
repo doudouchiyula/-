@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transition: all 3s;
+      margin: 200px auto;
+      transform-style: preserve-3d;
+    }
+
+    .pink,
+    .purple {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      text-align: center;
+      line-height: 200px;
+      color: white;
+      font-size: 20px;
+      border: 2px red solid;
+    }
+
+    .pink {
+      background-color: pink;
+      z-index: 1;
+      /* 要实现背面反转要加这个属性，用于决定当一个元素的背面面向用户的时候是否可见*/
+      backface-visibility: hidden;
+    }
+
+    .purple {
+      background-color: blueviolet;
+      transform: rotateY(180deg);
+    }
+
+    .box:hover {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="pink">黑马程序员</div>
+    <div class="purple">我在这里等你</div>
+  </div>
+</body>
+
+</html>

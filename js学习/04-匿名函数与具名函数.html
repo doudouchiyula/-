@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let a = function () {
+      console.log('我是函数表达式');
+    }
+    a();
+
+    // 匿名函数
+    (function () { console.log('匿名函数方式一') })();
+    (function () { console.log('匿名函数方式二') }());
+    //带参数的匿名函数方式一
+    (function (a, b) { console.log(a + b) })(1, 2);
+  </script>
+</body>
+
+</html>

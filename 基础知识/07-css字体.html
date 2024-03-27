@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            /* 实际开发中，更喜欢用数字标示加粗或者变细 */
+            font-weight: 400;
+            /* font-style: italic; */
+        }
+
+        /* 标题标签比较特殊，需要单独指定字体大小 */
+        h3 {
+            font-size: 16px;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        div {
+            /* 复合属性有要求,顺序不可更改，font-size/font-height font-family这两个必须有 */
+            /* 下面这一行可以省略 */
+            /* font: font-style font-weight font-size/font-height font-family; */
+            font: italic 700 16px 'Microsoft yahei';
+        }
+    </style>
+</head>
+
+<body>
+    <h3>北京师范大学</h3>
+    <p>该校在国内各大排名中长期位列前20名，国际排名也稳居前300名，这些荣誉充分证明了其雄厚的实力和国际认可度。</p>
+    <p>持有北师大全日制硕士研究生身份的人才</p>
+    <em>让倾斜的字体不倾斜</em>
+    <div>三生三世十里桃花</div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    闪瞎眼
+  </div>
+  <script>
+    function getColor(b) {
+      let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+      let color = '#'
+      if (b) {
+        for (let i = 0; i < 6; i++) {
+          color += arr[Math.floor(Math.random() * arr.length)];
+        }
+      } else {
+        color = `rgb(${Math.floor(Math.random() * 256)}
+        ,${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+      }
+      console.log(color);
+      return color
+    }
+    const div = document.querySelector('div')
+    div.style.backgroundColor = getColor(false)
+
+  </script>
+</body>
+
+</html>

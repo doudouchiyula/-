@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    strong {
+      font-size: 22px;
+    }
+
+    h3 {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <strong>年会抽奖名单</strong>
+    <div>
+      <h3>第一名：</h3><span class="one">号狂欢节</span>
+    </div>
+    <div>
+      <h3>第二名：</h3><span class="two"></span>
+    </div>
+    <div>
+      <h3>第三名：</h3><span class="three"></span>
+    </div>
+  </div>
+
+  <script>
+    const names = ['黎明', '张学友', '刘德华', '张远', '路虎', '爱斯基', '摩尔', '威尔']
+    const one = document.querySelector('.one')
+    const two = document.querySelector('.two')
+    const three = document.querySelector('.three')
+    getName(one)
+    getName(two)
+    getName(three)
+
+    function getName(element) {
+      let index = Math.floor(Math.random() * names.length)
+      element.innerHTML = `${names[index]}`
+      names.splice(index, 1)
+    }
+  </script>
+</body>
+
+</html>

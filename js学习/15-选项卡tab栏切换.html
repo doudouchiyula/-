@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      height: 350px;
+      margin: 20px;
+      border: 1px #ccc solid;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .hd {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+      align-items: center;
+    }
+
+    .hd h3 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    ul li {
+      margin: 0 15px;
+      color: #666;
+      font-size: 18px;
+    }
+
+    .bd {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      display: none;
+    }
+
+    .big {
+      position: relative;
+      width: 200px;
+      background-color: #f4e8e8;
+      text-align: center;
+    }
+
+    .big img {
+      width: 80px;
+      height: 80px;
+      margin-top: 70px;
+    }
+
+    .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      background: -webkit-linear-gradient(left, top, #efdf49, #f6bc36);
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .list .item {
+      display: flex;
+      width: 200px;
+      padding: 20px;
+    }
+
+    .list .item img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .right {
+      margin-left: 10px;
+    }
+
+    .right .des {
+      max-lines: 2;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .selected {
+      color: red;
+      border-bottom: 3px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="hd">
+      <h3>每日特价</h3>
+      <div class="tab">
+        <ul>
+          <!-- 添加自定义属性，使用事件委托时，就可以选出当前点击的第几个li,从而切换内容 -->
+          <li class="selected" data-id='0'>精选</li>
+          <li data-id='1'>美食</li>
+          <li data-id='2'>百货</li>
+          <li data-id='3'>个护</li>
+          <li data-id='4'>预告</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="bd active">
+        <div class="big">
+          <img src="./images/img1.jpg" alt="">
+          <p>【10片】美白祛斑面膜</p>
+          <p>¥9.9</p>
+          <p>已购130件11111</p>
+          <p class="label">80天最低价</p>
+        </div>
+        <div class="list">
+          <div class="item">
+            <img src="./images/img1.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img1.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img1.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img1.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="big">
+          <img src="./images/img3.jpg" alt="">
+          <p>【10片】美白祛斑面膜</p>
+          <p>¥9.9</p>
+          <p>已购130件22222</p>
+          <p class="label">80天最低价</p>
+        </div>
+        <div class="list">
+          <div class="item">
+            <img src="./images/img3.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img3.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img3.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img3.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="big">
+          <img src="./images/img4.jpg" alt="">
+          <p>【10片】美白祛斑面膜</p>
+          <p>¥9.9</p>
+          <p>已购130件33333</p>
+          <p class="label">80天最低价</p>
+        </div>
+        <div class="list">
+          <div class="item">
+            <img src="./images/img4.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img4.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img4.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img4.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="big">
+          <img src="./images/img5.jpg" alt="">
+          <p>【10片】美白祛斑面膜</p>
+          <p>¥9.9</p>
+          <p>已购130件44444</p>
+          <p class="label">80天最低价</p>
+        </div>
+        <div class="list">
+          <div class="item">
+            <img src="./images/img5.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img5.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img5.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img5.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="big">
+          <img src="./images/img6.jpg" alt="">
+          <p>【10片】美白祛斑面膜</p>
+          <p>¥9.9</p>
+          <p>已购130件5555555</p>
+          <p class="label">80天最低价</p>
+        </div>
+        <div class="list">
+          <div class="item">
+            <img src="./images/img6.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img6.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img6.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/img6.jpg" alt="">
+            <div class="right">
+              <p class="des">墨兰起色衣柜大闸门香水</p>
+              <p>￥59</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    // const lis = document.querySelectorAll('.tab ul li')
+
+    // for (let i = 0; i < lis.length; i++) {
+    //   const element = lis[i];
+
+    //   element.addEventListener('mouseenter', function () {
+    //     document.querySelector('.selected').classList.remove('selected')
+    //     this.classList.add('selected')
+
+    //      document.querySelector('.active').classList.remove('active')
+    //      document.querySelector(`.bd:nth-child(${i+1})`).classList.add('active')
+    //   })
+    // }
+    // 采用事件委托的写法
+    const ul = document.querySelector('.tab ul')
+    ul.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        //先移除之前选中的，点前元素添加
+        document.querySelector('.selected').classList.remove('selected')
+        e.target.classList.add('selected')
+
+        document.querySelector('.active').classList.remove('active')
+        console.log(e.target.dataset.id)
+        // e.target.dataset.id取出来的是字符串，需要转成数值
+        document.querySelector(`.bd:nth-child(${+e.target.dataset.id + 1})`).classList.add('active')
+      }
+    })
+
+    // html整个页面滚动的距离
+    window.addEventListener('scroll', function () {
+      console.log(document.documentElement.scrollTop);
+    })
+  </script>
+</body>
+
+</html>

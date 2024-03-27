@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: brown;
+            font-size: 12px;
+        }
+
+        /* 类选择器口诀：样式点定义 结构类（class）调用 一个或多个 开发最常用 */
+        .red {
+            color: red;
+        }
+
+        .star-sing {
+            color: aqua;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box-red {
+            background-color: red;
+        }
+
+        .box-green {
+
+            background-color: green;
+        }
+
+        .star-arts {
+            color: red;
+        }
+
+        .font35 {
+            font-size: 20px;
+        }
+
+        /* id选择器  口诀：样式#定义，结构id调用，只能调用一次，别人切勿使用*/
+        #pink {
+            color: pink;
+        }
+
+        /* 通配符选择器*,会把所有标签修改，不需要调用，直接修改 */
+    </style>
+</head>
+
+<body>
+    <p>有点意思</p>
+    <p>有点意思</p>
+    <p>有点意思</p>
+    <div>女生</div>
+    <div>女生</div>
+    <div>女生</div>
+    <ul>
+        <li class="red">春风</li>
+        <li>寒露</li>
+        <li>霜降</li>
+        <li>冬至</li>
+    </ul>
+    <div class="star-sing">张远</div>
+
+    <div class="box-red box"></div>
+    <div class="box-green box"></div>
+    <div class="box-red box"></div>
+    <div class="star-arts font35">刘德华</div>
+    <div id="pink">迈克尔杰克逊</div>
+</body>
+
+</html>
